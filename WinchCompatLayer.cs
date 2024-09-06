@@ -97,9 +97,9 @@ private static void DownloadWinch()
         DownloadWinch();
 
         var winchAsm = Assembly.LoadFile(Path.Combine(Paths.GameRootPath, "Winch", "Winch.dll"));
-        var loggerType = winchAsm.GetType("Winch.Logging.Logger").GetField("_minLogLevel", BindingFlags.NonPublic | BindingFlags.Instance).FieldType.GenericTypeArguments[0];
+        var logLevelType = winchAsm.GetType("Winch.Logging.Logger").GetField("_minLogLevel", BindingFlags.NonPublic | BindingFlags.Instance).FieldType.GenericTypeArguments[0];
         _harmonyInstance.Patch(AccessTools.Method(winchAsm.GetType("Winch.Logging.Logger"), "Log", [
-            loggerType, typeof(string), typeof(string)
+            logLevelType, typeof(string), typeof(string)
         ]), postfix: new HarmonyMethod(typeof(WinchCompatLayer).GetMethod(nameof(WinchMessageLogged))));
         winchAsm.GetType("Winch.Core.WinchCore").GetMethod("Main")!.Invoke(null, null);
 
@@ -155,7 +155,8 @@ private static void DownloadWinch()
         if (foundAssembly != null)
             return foundAssembly;
 
-        if (Utility.TryResolveDllAssembly(assemblyName, WinchPath, out foundAssembly))
+        if (Utility.TryResolveDllAssembly(assemblyName, WinchPath, out foundAssembly)
+            || Utility.TryResolveDllAssembly(assemblyName, Path.Combine(Paths.GameRootPath, "Mods"), out foundAssembly))
             return foundAssembly;
 
         return null;
