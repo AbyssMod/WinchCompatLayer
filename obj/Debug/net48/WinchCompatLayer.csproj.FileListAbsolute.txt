@@ -1,0 +1,8 @@
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\bin\Debug\net48\WinchCompatLayer.dll
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.csproj.AssemblyReference.cache
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\MyPluginInfo.cs
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.AssemblyInfoInputs.cache
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.AssemblyInfo.cs
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.csproj.CoreCompileInputs.cache
+C:\Users\gjguz\source\repos\DREDGE\WinchCompatLayer\obj\Debug\net48\WinchCompatLayer.dll
